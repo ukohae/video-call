@@ -5,7 +5,7 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # install app dependencies
-COPY package*.json ./
+COPY package.json ./
 
 RUN npm init -y
 
