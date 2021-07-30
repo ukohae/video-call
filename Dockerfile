@@ -11,7 +11,7 @@ RUN npm init -y
 
 RUN npm i express ejs socket.io
 
-RUN npm uuid
+# RUN npm uuid
 
 RUN npm i --save-dev nodemon
 
