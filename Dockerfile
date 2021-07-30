@@ -15,8 +15,6 @@ RUN npm i uuid
 
 RUN npm i --save-dev nodemon
 
-RUN npm run devStart
-
 # bundle app source
 COPY . .
 
@@ -24,4 +22,4 @@ COPY . .
 EXPOSE 4000
 
 # run the application
-CMD [ "node", "server.js" ]
+CMD [ "nodemon", "server.js" ]
