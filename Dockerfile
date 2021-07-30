@@ -2,10 +2,10 @@
 FROM node:14
 
 # create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # install app dependencies
-COPY package.json ./
+COPY [ "package.json", "package-lock.json*"], "./"]
 
 RUN npm init -y
 
