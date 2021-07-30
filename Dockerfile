@@ -5,13 +5,13 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # install app dependencies
-COPY package.json ./
+COPY package*.json ./
 
 RUN npm init -y
 
 RUN npm i express ejs socket.io
 
-RUN npm uuid
+RUN npm i uuid
 
 RUN npm i --save-dev nodemon
 
