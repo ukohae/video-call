@@ -19,7 +19,7 @@ RUN npm i --save-dev nodemon
 COPY . .
 
 # tell the port number the container should expose
-EXPOSE 4000
+EXPOSE 5000
 
 # run the application
 CMD [ "nodemon", "server.js" ]
