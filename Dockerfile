@@ -1,11 +1,11 @@
 # base image from Docker Hub
-FROM node:14
+FROM node:14-alpine
 
-# create app directory
-WORKDIR /app
+RUN mkdir -p /user/src/app
 
-# install app dependencies
-COPY [ "package.json", "package-lock.json*"], "./"]
+WORKDIR /user/src/app
+
+COPY ./package*.json ./
 
 RUN npm init -y
 
@@ -15,11 +15,8 @@ RUN npm i uuid
 
 RUN npm i --save-dev nodemon
 
-# bundle app source
-COPY . .
+COPY . ./
 
-# tell the port number the container should expose
-EXPOSE 5000
-
-# run the application
-CMD [ "nodemon", "server.js" ]
+EXPOSE 3000
+# ENTRYPOINT ["node", "nodemon server.js"]
+ENTRYPOINT ["npm", "start"]

@@ -41,7 +41,7 @@ pipeline {
         stage('Docker Run') {
             steps{
                 script {
-                    dockerImage.run("-p 8096:5000 --rm --name videocallContainer")
+                    dockerImage.run("-p 8096:3000 --rm --name videocallContainer")
                 }
             }
         }
