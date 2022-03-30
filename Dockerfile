@@ -1,5 +1,5 @@
 # base image from Docker Hub
-FROM node:14-alpine
+FROM node:slim
 
 RUN mkdir -p /user/src/app
 
